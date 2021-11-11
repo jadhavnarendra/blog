@@ -1,0 +1,60 @@
+
+<html>
+<body>
+<div class="container">
+
+<%= form_with model: article do |form| %>
+  <div class="card">
+  <div class="card-body">
+
+  <div class="mb-3">
+      <%= form.label :title, { class: "form-label"} %><br>
+      <%= form.text_field :title, { class: "form-control", placeholder: "Site Title" } %>
+      <% article.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :email,{ class: "form-label"} %><br>
+      <%= form.text_field :email, { class: "form-control", placeholder: "Site Email" } %><br>
+      <% article.errors.full_messages_for(:email).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password,{ class: "form-label"} %><br>
+      <%= form.text_field :password, { class: "form-control", placeholder: "Site Password" } %><br>
+      <% article.errors.full_messages_for(:password).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+   
+  
+    <div class="mb-3">
+      <%= form.label :body,{ class: "form-label"} %><br>
+      <%= form.text_area :body, { class: "form-control", placeholder: "Site Body" } %><br>
+      <% article.errors.full_messages_for(:body).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+    <%= form.label :image,{ class: "form-label"} %><br>
+    <%= form.file_field :image %><br>
+    <% article.errors.full_messages_for(:image).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+    
+  
+    <div>
+      <%= form.submit %>
+      
+    </div>
+    </div>
+  <% end %>
+  </div>
+  </body>
+  </html>

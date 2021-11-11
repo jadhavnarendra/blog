@@ -1,0 +1,49 @@
+<html>
+  <body>
+    <div class="container ht">
+
+    <div class="row">
+    <div class="col-sm-3 col-md-6" style="background-color:#efef2d;">
+      <h1 class="heading ht"><%= @article.title %></h1>
+      <p class="text ht"><%= @article.email %></p>
+      <p class="text ht"><%= @article.password %></p>
+      <p class="text ht"><%= @article.body %></p>
+      <p class="text ht"><%= image_tag @article.image, width: "200px" %></p>
+       
+
+
+       
+
+      <div class="flex-container ht">
+
+         <div><%= link_to "Edit", edit_article_path(@article), class: 'btn btn-success butt' %></div>
+         <div><%= link_to "Destroy", article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: 'btn btn-success butt' %></div>
+
+          <div><%= link_to "Back", articles_path, class: 'btn btn-success butt' %></div>
+
+       
+          
+
+       </div>
+       </div>
+       <div class="col-sm-9 col-md-6" style="background-color:pink;">
+       <h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+</div>
+</div>
+     </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
